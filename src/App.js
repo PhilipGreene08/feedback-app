@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import Feedbackitem from './components/Feedbackitem';
 import Header from './components/Header';
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
     <Fragment>
       <Header />
       <div className='container'>
-        <h1>My Lol</h1>
+        <Feedbackitem />
       </div>
     </Fragment>
   );
