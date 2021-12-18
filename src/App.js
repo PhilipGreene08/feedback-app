@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { useState } from 'react';
-
+import FeedbackStats from './components/FeedbackStats';
 import FeedbackList from './components/FeedbackList';
 import Header from './components/Header';
 import FeedbackData from './data/FeedbackData';
@@ -17,7 +17,9 @@ function App() {
   return (
     <Fragment>
       <Header />
+
       <div className='container'>
+        <FeedbackStats feedback={feedback} />
         <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
       </div>
     </Fragment>

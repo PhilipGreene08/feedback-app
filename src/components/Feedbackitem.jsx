@@ -6,7 +6,6 @@ function Feedbackitem({ item, handleDelete }) {
   //const handleClick = (id) => handleDelete(id);
   return (
     <Card>
-      <h3>Header #{item.id}</h3>
       <div className='num-display'>{item.rating}</div>
       <button onClick={(event) => handleDelete(item.id)} className='close'>
         <FaTimes color='purple' />
