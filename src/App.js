@@ -4,6 +4,7 @@ import FeedbackStats from './components/FeedbackStats';
 import FeedbackList from './components/FeedbackList';
 import Header from './components/Header';
 import FeedbackData from './data/FeedbackData';
+import FeedbackForm from './components/FeedbackForm';
 //import Card from './components/shared/Card';
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
   return (
     <Fragment>
       <Header />
-
+      <FeedbackForm />
       <div className='container'>
         <FeedbackStats feedback={feedback} />
         <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
