@@ -10,6 +10,10 @@ import FeedbackForm from './components/FeedbackForm';
 function App() {
   const [feedback, setfeedback] = useState(FeedbackData);
 
+  const addFeedback = (newFeedback) => {
+    console.log(newFeedback);
+  };
+
   const deleteFeedback = (id) => {
     if (window.confirm(`Are You Sure?`)) {
       setfeedback(feedback.filter((item) => id !== item.id));
@@ -18,7 +22,7 @@ function App() {
   return (
     <Fragment>
       <Header />
-      <FeedbackForm />
+      <FeedbackForm handleAdd={addFeedback} />
       <div className='container'>
         <FeedbackStats feedback={feedback} />
         <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
