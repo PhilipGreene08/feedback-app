@@ -10,6 +10,16 @@ export const FeedbackProvider = ({ children }) => {
       text: 'blahafhsijdfbk',
       rating: 10,
     },
+    {
+      id: 2,
+      text: 'haha asdasdasdsadadaf',
+      rating: 10,
+    },
+    {
+      id: 3,
+      text: 'lol asdadasdsd',
+      rating: 7,
+    },
   ]);
 
   const [feedbackEdit, setFeedbackEdit] = useState({
@@ -28,6 +38,12 @@ export const FeedbackProvider = ({ children }) => {
     }
   };
 
+  const updateFeedback = (id, updItem) => {
+    setFeedback(
+      feedback.map((item) => (item.id === id ? { ...item, ...updItem } : item))
+    );
+  };
+
   //set item to be updated
   const editFeedback = (item) => {
     setFeedbackEdit({
@@ -36,16 +52,18 @@ export const FeedbackProvider = ({ children }) => {
     });
   };
 
+  //this is how functions are accessed from form
   return (
     //editFeedback is the function that runs
     //feedbackEdit is a piece of state
     <FeedbackContext.Provider
       value={{
         feedback: feedback,
+        feedbackEdit,
         deleteFeedback,
         addFeedback,
         editFeedback,
-        feedbackEdit,
+        updateFeedback,
       }}
     >
       {children}
